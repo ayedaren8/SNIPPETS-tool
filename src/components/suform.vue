@@ -1,5 +1,5 @@
 <template>
-  <el-form rules="form" ref="form" label-width="80px">
+  <el-form  ref="form" label-width="80px">
     <el-form-item label="part">
       <el-select v-model="form.part" size="mini" placeholder="请选择" >
         <el-option
@@ -60,7 +60,7 @@ export default {
   methods: {
     onSubmit() {
       this.form.name=this.form.part+':'+ this.form.alias
-      this.$emit('snip-data',this.form)
+      this.$emit('snip-data',{name:this.form.name,body:this.form.body,prefix:this.form.prefix,description:this.form.description})
     },
   },
 };
